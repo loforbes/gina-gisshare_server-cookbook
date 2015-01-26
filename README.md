@@ -1,2 +1,2 @@
-# gina-gisshare_users-cookbook
-A chef cookbook to create the GINA GIS users with a shared primary group
+# gina-gisshare_server-cookbook
+A chef cookbook to create a GINA GIS server 
