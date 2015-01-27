@@ -5,4 +5,5 @@ license          'apache2'
 description      'Installs/Configures gina-gisshare_server'
 long_description 'Installs/Configures gina-gisshare_server'
 version          '0.1.0'
-
+depends          'nfs','~> 2.0.0'
+depends          'samba','~> 0.12.0'

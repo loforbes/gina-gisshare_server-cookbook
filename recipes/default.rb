@@ -30,3 +30,22 @@ node['gisshare']['users'].each do |u|
   end
 end
 
+# scratch filesystem setup
+
+mount '/mnt/gisscratch' do
+  device '/dev/mapper/gisscratch_vg-gisscratch'
+  fstype 'xfs'
+  options 'inode64'
+  action :mount
+end
+
+# NFS setup
+include_recipe 'nfs::server'
+nfs_export '/mnt/gisscratch' do
+  network '10.19.16.0/23'
+  anongroup 'gisanalysts'
+end
+
+# Samba setup
+include_recipe 'samba::server'
+

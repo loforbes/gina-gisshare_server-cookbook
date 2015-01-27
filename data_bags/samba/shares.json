@@ -1,0 +1,14 @@
+{
+  "id": "shares",
+  "shares": {
+    "gisshare": {
+      "comment": "GIS scratch filesystem",
+      "path": "/mnt/gisscratch",
+      "guest ok": "no",
+      "printable": "no",
+      "write list": ["mitch","pete","lwirth","jcable"],
+      "create mask": "0664",
+      "directory mask": "0775"
+    }
+  }
+}
