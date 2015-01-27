@@ -16,3 +16,17 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# shared group setup
+group 'gisanalysts' do
+  gid '9016'
+  action :create
+end
+
+# GIS users setup
+node['gisshare']['users'].each do |u|
+  user u do
+    gid 'gisanalysts'
+    action :create
+  end
+end
+
