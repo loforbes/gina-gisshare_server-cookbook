@@ -34,12 +34,11 @@ end
 
 #
 # scratch filesystem setup
-
-mount '/mnt/gisscratch' do
-  device '/dev/mapper/gisscratch_vg-gisscratch'
-  fstype 'xfs'
-  options 'inode64'
-  action :mount
+directory '/mnt/gisscratch' do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
 end
 
 #
