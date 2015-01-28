@@ -25,7 +25,7 @@ end
 
 #
 # GIS users setup
-node['gisshare']['users'].each do |u|
+node['users'].each do |u|
   user u do
     gid 'gisanalysts'
     action :create
