@@ -16,12 +16,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+#
 # shared group setup
 group 'gisanalysts' do
   gid '9016'
   action :create
 end
 
+#
 # GIS users setup
 node['gisshare']['users'].each do |u|
   user u do
@@ -30,6 +32,7 @@ node['gisshare']['users'].each do |u|
   end
 end
 
+#
 # scratch filesystem setup
 
 mount '/mnt/gisscratch' do
@@ -39,6 +42,7 @@ mount '/mnt/gisscratch' do
   action :mount
 end
 
+#
 # NFS setup
 include_recipe 'nfs::server'
 nfs_export '/mnt/gisscratch' do
@@ -46,6 +50,7 @@ nfs_export '/mnt/gisscratch' do
   anongroup 'gisanalysts'
 end
 
+#
 # Samba setup
 include_recipe 'samba::server'
 
