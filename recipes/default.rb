@@ -40,6 +40,12 @@ directory '/mnt/gisscratch' do
   mode '0755'
   action :create
 end
+mount '/mnt/gisscratch' do
+  device '/dev/mapper/gisscratch_vg-gisscratch'
+  fstype 'xfs'
+  options 'inode64'
+  action :mount
+end
 
 #
 # NFS setup
