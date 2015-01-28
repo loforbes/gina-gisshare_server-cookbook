@@ -6,7 +6,7 @@
       "path": "/mnt/gisscratch",
       "guest ok": "no",
       "printable": "no",
-      "write list": ["mitch","pete","lwirth","jcable"],
+      "write list": ["amjohnson","jcable","lwirth","mitch","pete"],
       "create mask": "0664",
       "directory mask": "0775"
     }

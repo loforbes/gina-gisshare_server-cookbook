@@ -15,5 +15,7 @@ suites:
     attributes:
       gisshare:
         users:
-          - mitch
+          - amjohnson
+          - jcable
+          - lwirth
           - pete
