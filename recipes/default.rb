@@ -53,6 +53,7 @@ include_recipe 'nfs::server'
 nfs_export '/mnt/gisscratch' do
   network '10.19.16.0/23'
   anongroup 'gisanalysts'
+  writeable true
 end
 
 #
