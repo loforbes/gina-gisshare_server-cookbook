@@ -51,5 +51,5 @@ end
 
 #
 # Samba setup
-include_recipe 'samba::server'
+#include_recipe 'samba::server'
 
