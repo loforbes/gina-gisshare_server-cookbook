@@ -46,6 +46,12 @@ mount '/mnt/gisscratch' do
   options 'inode64'
   action :mount
 end
+directory '/mnt/gisscratch' do
+  owner 'root'
+  group 'gisanalysts'
+  mode '0775'
+  action :create
+end
 
 #
 # NFS setup
