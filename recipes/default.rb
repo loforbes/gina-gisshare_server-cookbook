@@ -61,6 +61,14 @@ nfs_export '/mnt/gisscratch' do
   anongroup 'gisanalysts'
   writeable true
 end
+iptables_ng_rule 'gina-private-net' do
+  # rules to allow all tcp & udp from GINA private network
+  # beats trying to handle NFS through iptables
+  rule ['--source 10.19.16.0/23 --protocol tcp --jump ACCEPT',
+        '--source 10.19.16.0/23 --protocol udp --jump ACCEPT']
+  # source is IPv4 so cannot apply this rule to IPv6
+  ip_version 4
+end
 
 #
 # Samba setup
