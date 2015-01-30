@@ -13,9 +13,9 @@ suites:
     run_list:
       - recipe[gina-gisshare_server::default]
     attributes:
-      gisshare:
-        users:
-          - amjohnson
-          - jcable
-          - lwirth
-          - pete
+      users:
+        - amjohnson
+        - jcable
+        - lwirth
+        - mitch
+        - pete
