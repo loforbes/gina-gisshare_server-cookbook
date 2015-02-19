@@ -14,7 +14,7 @@ suites:
       - recipe[gina-gisshare_server::default]
     attributes:
       users:
-        - amjohnson
+        - andrew
         - jcable
         - lwirth
         - mitch
