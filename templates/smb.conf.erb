@@ -1,0 +1,21 @@
+[global]
+  workgroup = UAFGINA
+  server string = Server %h (Samba, Ubuntu)
+  dns proxy = no
+  log file = /var/log/samba/log.%m
+  max log size = 1000
+  syslog = 2
+  panic action = /usr/share/samba/panic-action %d
+  server role = standalone server
+  hosts allow 10.19.16.
+  security = user
+  passdb backend = tdbsam
+  smb passwd file = /etc/samba/smbpasswd
+  load printers = no
+[gisscratch]
+  comment = GIS Staging Area
+  path = /mnt/gis/scratch
+  valid users = @gisanalysts
+  writeable = yes
+  force create mode = 0664
+  force directory mode = 0775

@@ -72,5 +72,9 @@ end
 
 #
 # Samba setup
-#include_recipe 'samba::server'
+template "/etc/samba/smb.conf" do
+  source "smb.conf.erb"
+  mode "0644"
+  action :create
+end
 
