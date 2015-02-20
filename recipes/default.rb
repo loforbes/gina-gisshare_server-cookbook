@@ -34,19 +34,19 @@ end
 
 #
 # scratch filesystem setup
-directory '/mnt/gisscratch' do
+directory '/mnt/gis' do
   owner 'root'
   group 'root'
   mode '0755'
   action :create
 end
-mount '/mnt/gisscratch' do
+mount '/mnt/gis' do
   device '/dev/mapper/gisscratch_vg-gisscratch'
   fstype 'xfs'
   options 'inode64'
   action :mount
 end
-directory '/mnt/gisscratch' do
+directory '/mnt/gis/scratch' do
   owner 'root'
   group 'gisanalysts'
   mode '0775'
@@ -56,7 +56,7 @@ end
 #
 # NFS setup
 include_recipe 'nfs::server'
-nfs_export '/mnt/gisscratch' do
+nfs_export '/mnt/gis/scratch' do
   network '10.19.16.0/23'
   anongroup 'gisanalysts'
   writeable true
