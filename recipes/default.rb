@@ -89,7 +89,7 @@ nfs_export '/mnt/gis/scratch' do
   network '10.19.16.0/23'
   anongroup 'gisanalysts'
   writeable true
-  options ['squash_gids=5010,5035,5037,5040,5086,5087']
+  options ['squash_gids=5010\,5035\,5037\,5040\,5086\,5087']
 end
 iptables_ng_rule '10-gina-private-net' do
   # rules to allow all tcp & udp from GINA private network
