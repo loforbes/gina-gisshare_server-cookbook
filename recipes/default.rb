@@ -3,13 +3,13 @@
 # Recipe:: default
 #
 # Copyright 2015 UAF
-# 
+#
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
-# 
+#
 #     http://www.apache.org/licenses/LICENSE-2.0
-# 
+#
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -31,35 +31,6 @@ node['users'].each do |u|
     action :create
   end
 end
-
-#
-# Need version of LVM2 from Vivid Vervet (15.04)
-include_recipe 'apt::default'
-apt_repository 'vivid' do
-  uri 'http://archive.ubuntu.com/ubuntu/'
-  distribution 'vivid'
-  repo_name 'vivid'
-  components ['main', 'multiverse', 'universe']
-  action :add
-end
-apt_preference 'vivid' do
-  glob '*'
-  pin 'release n=vivid'
-  pin_priority '250'
-  action :add
-end
-# still need to execute the following after initial install:
-# sudo apt-get upgrade
-# sudo apt-get install dmeventd
-# sudo apt-get upgrade -t vivid lvm2 dmsetup libdevmapper1.02.1 dpkg \
-#  init-system-helpers libselinux1 perl-base
-# sudo apt-get install -t vivid apparmor console-setup debconf-i18n kbd \
-#  keyboard-configuration libapparmor-perl libarchive-extract-perl \
-#  libclass-accessor-perl libio-string-perl liblocale-gettext-perl \
-#  liblog-message-simple-perl libmodule-pluggable-perl libparse-debianchangelog-perl \
-#  libpod-latex-perl libsub-name-perl libterm-ui-perl libtext-charwidth-perl \
-#  libtext-iconv-perl libtext-soundex-perl libtext-wrapi18n-perl libtimedate-perl perl \
-#  perl-modules tasksel tasksel-data ubuntu-minimal ureadahead
 
 #
 # scratch filesystem setup
@@ -107,4 +78,3 @@ template "/etc/samba/smb.conf" do
   mode "0644"
   action :create
 end
-
