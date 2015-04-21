@@ -49,7 +49,7 @@ end
 directory '/mnt/gis/scratch' do
   owner 'root'
   group 'gisanalysts'
-  mode '0775'
+  mode '2775'
   action :create
 end
 
